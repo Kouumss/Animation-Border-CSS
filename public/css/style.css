@@ -1,0 +1,123 @@
+
+
+body {
+    font-family: monospace;
+    font-size: 2rem;
+    background-color: black;
+    color: #FFF;
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#exo1 {
+    position: relative;
+    display: inline-block;
+    /* largeur proportionnelle à son contenu */
+    padding-bottom: 0.25rem;
+    /* définis l'espace entre le texte et la ligne */
+}
+
+#exo1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 255, 0);
+    background: linear-gradient(to right, green, red);
+    transition: width 1s ease-out;
+}
+
+#exo1:hover::after {
+    width: 100%;
+}
+
+#exo2 {
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+#exo2::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(0, 255, 0);
+    background: linear-gradient(to right, green, red);
+    bottom: 0;
+    left: 50%;
+    transition: 1s ease-in-out;
+}
+
+#exo2:hover::after {
+    left: 0;
+    width: 100%;
+
+}
+
+
+
+
+#exo3 {
+    background: linear-gradient(to bottom, green 0%, red 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    color: #FFF;
+    transition: 1s;
+}
+
+#exo3:hover {
+    background-size: 4px 200px;
+}
+
+
+
+#exo4 {
+    position: relative;
+    width: max-content;
+}
+
+#exo4::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0%;
+}
+
+#exo4:hover::before {
+    visibility: hidden;
+    transition: width 2s, height 1s 2s, visibility 10s 4s;
+    border-top: 1px solid rgb(0, 255, 0);
+    border-right: 1px solid rgb(0, 255, 0);
+    width: 100%;
+    height: calc(100% - 2px);
+}
+
+#exo4::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    bottom: 0%;
+    right: 0%;
+    visibility: hidden;
+
+}
+
+#exo4:hover::after {
+    visibility: visible;
+    transition: width 2s 3s, height 1s 5s, visibility 2s 3s;
+    width: 100%;
+    height: calc(100% - 2px);
+    border-bottom: 1px solid rgb(0, 255, 0);
+    border-left: 1px solid rgb(0, 255, 0);
+
+
+
+}
